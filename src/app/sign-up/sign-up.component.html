@@ -1,0 +1,71 @@
+<section id="signUp">
+    <div class="container">
+        <form [formGroup]="registerForm" (ngSubmit)="submitregister()">
+            <div class="form m-auto w-50">
+                <div class="row">
+                    <div class="col-md-6 my-2">
+                        <input type="text" formControlName="first_name" class="form-control"
+                            placeholder="Enter First Name">
+                        <div *ngIf="registerForm.controls['first_name'].invalid&&registerForm.controls['first_name'].touched"
+                            class="text-danger alert alert-danger my-2 " role="alert">
+                            <li *ngIf="registerForm.controls['first_name'].errors?.['required']"> First name is required
+                            </li>
+                            <li *ngIf="registerForm.controls['first_name'].errors?.['minlength']"> First name min length
+                                3
+                            </li>
+                            <li *ngIf="registerForm.controls['first_name']?.errors?.['maxlength']"> First name max
+                                length 10
+                            </li>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-2">
+                        <input type="text" formControlName="last_name" class="form-control"
+                            placeholder="Enter Last Name">
+                        <div *ngIf="registerForm.controls['last_name'].invalid&&registerForm.controls['last_name'].touched"
+                            class="text-danger alert alert-danger mt-2" role="alert">
+                            <li *ngIf="registerForm.controls['last_name'].errors?.['required']"> Last name is required
+                            </li>
+                            <li *ngIf="registerForm.controls['last_name'].errors?.['minlength']"> Last name min length 3
+                            </li>
+                            <li *ngIf="registerForm.controls['last_name']?.errors?.['maxlength']"> Last name max length
+                                10
+                            </li>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+                        <input type="email" formControlName="email" class="form-control my-3" placeholder="Enter Email">
+                        <div *ngIf="registerForm.controls['email'].invalid&&registerForm.controls['email'].touched"
+                            class="text-danger alert alert-danger mt-2" role="alert">
+                            <li *ngIf="registerForm.controls['email'].errors?.['required']">Email is required</li>
+                            <li *ngIf="registerForm.controls['email'].errors?.['email']">Email not valid </li>
+                        </div>
+                        <input type="password" name="password" formControlName="password" class="form-control my-3"
+                            placeholder="Enter password">
+                        <div *ngIf="registerForm.controls['password'].invalid&&registerForm.controls['password'].touched"
+                            class="text-danger alert alert-danger mt-2" role="alert">
+                            <li *ngIf="registerForm.controls['password'].errors?.['required']">Password is required</li>
+                            <li *ngIf="registerForm.controls['password'].errors?.['pattern']">Password not valid</li>
+                        </div>
+                        <input type="number" formControlName="age" class="form-control my-3" placeholder="Enter Age">
+                        <div *ngIf="registerForm.controls['age'].invalid&&registerForm.controls['age'].touched"
+                            class="text-danger alert alert-danger mt-2" role="alert">Age is required
+                        </div>
+                        <button type="submit" [disabled]="registerForm.invalid"
+                             [ngClass]="{
+                            'btn btn-info w-100':true,
+                            ' btn-danger':isClicked
+                        }">
+                            <span *ngIf="!isClicked">SignUp</span>
+                            <span *ngIf="isClicked">Waiting...</span> </button>
+                        <p *ngIf="isSuccess" class="alert alert-success text-center" >
+                            {{ResponseMessage}}
+                        </p>
+                        <div *ngIf="isEmailError" class="alert alert-danger text-center my-2"  role="alert">
+                            {{isEmailMessageError}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

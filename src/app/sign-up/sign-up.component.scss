@@ -1,0 +1,56 @@
+#signUp{
+    min-height: 100vh;  
+      background-color: #343a40 !important;
+}
+.form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+
+
+
+
+
+@media screen and (max-width:567px)
+{
+
+.form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width:25rem !important;
+}
+}
+
+
+/*////////////////////////////// screen from 569 to 768 ///////////////////////////////*/
+
+@media screen and (min-width:569px) and (max-width:768px)
+{
+
+    .form{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width:28rem !important;
+    }
+}
+
+/* -----------------------------screen 769 to 992--------------------- */
+@media screen and (min-width:769px) and (max-width:1200px)
+{
+
+    .form{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width:30rem !important;
+    }
+}

@@ -1,0 +1,65 @@
+#signIn{
+    min-height:100vh;
+      background-color: #343a40 !important;
+}
+.form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.test{
+  height:inherit;
+  background-color:burlywood;
+}
+
+
+
+
+
+
+@media screen and (max-width:567px)
+{
+.test{
+width: 25rem;
+}
+.form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width:25rem !important;
+}
+}
+
+
+/*////////////////////////////// screen from 569 to 768 ///////////////////////////////*/
+
+@media screen and (min-width:569px) and (max-width:768px)
+{
+  .test{
+    width: 28rem;
+    }
+    .form{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width:28rem !important;
+    }
+}
+
+/* -----------------------------screen 769 to 992--------------------- */
+@media screen and (min-width:769px) and (max-width:1200px)
+{
+  .test{
+    width: 30rem;
+    }
+    .form{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width:30rem !important;
+    }
+}

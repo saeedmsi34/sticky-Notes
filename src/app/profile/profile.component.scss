@@ -1,0 +1,35 @@
+#profile{
+    min-height: 100vh;
+    background-color: #343a40 !important;
+}
+
+.AddNote ,.dot{
+float: right;
+}
+// .myNote{
+//     min-height: 200px;
+//     width: 200px;
+//     background-color: rgb(36, 163, 136);
+
+// }
+i{
+    cursor: pointer;
+}
+.edites,.del{
+float: right;
+}
+:host {
+    .btn-dropdown {
+     transition: color .3s linear;
+      &:hover {
+        color: #09c;
+      }
+    }
+  }
+.font{
+  font-size: 20px !important ;
+  font-weight: 600 !important;
+}
+.hstack1{
+  float: right;
+}

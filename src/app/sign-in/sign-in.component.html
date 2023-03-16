@@ -1,0 +1,43 @@
+<section id="signIn">
+    <div class="container">
+        <form [formGroup]="signinForm" (ngSubmit)="submitsignIn()">
+            <div class="form m-auto w-50">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-12 ">
+                        <input formControlName="email" type="email" class="form-control my-3" placeholder="Enter Email">
+                        <div *ngIf="signinForm.controls['email'].invalid&&signinForm.controls['email'].touched"
+                            class="text-danger alert alert-danger mt-2" role="alert">
+                            <li *ngIf="signinForm.controls['email'].errors?.['required']">Email is required</li>
+                            <li *ngIf="signinForm.controls['email'].errors?.['email']">Email not valid </li>
+                        </div>
+                        <input formControlName="password" type="password" class="form-control my-3"
+                            placeholder="Enter password">
+                        <div *ngIf="signinForm.controls['password'].invalid&&signinForm.controls['password'].touched"
+                            class="text-danger alert alert-danger mt-2" role="alert">
+                            <li *ngIf="signinForm.controls['password'].errors?.['required']">Password is required</li>
+                            <li *ngIf="signinForm.controls['password'].errors?.['pattern']">Password not valid</li>
+                        </div>
+                        <button type="submit" [disabled]="signinForm.invalid" [ngClass]="{
+                            'btn btn-info w-100':true,
+                            ' btn-danger':isClicked
+                        }">
+                            <span *ngIf="!isClicked">SignIn</span>
+                            <span *ngIf="isClicked">Waiting...</span>
+                        </button>
+                    </div>
+                   
+                </div>
+                <div class="col-md-12 my-4   col-lg-12 col-sm-12  text-center">
+                    <div class="test text-center py-2">
+                        <h3 class="">test</h3>
+                        <h4>Email:testNotes@gmail.com</h4>
+                        <h4>password: <span>a123</span> </h4>
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+     
+
+    </div>
+</section>

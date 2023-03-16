@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg text-white navbar-dark ex fixed-top">
+    <div class="container">
+        <a class="navbar-brand text-reset fs-4 notes" ><i class="fa-solid fa-note-sticky notes"></i> Notes</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li *ngIf="!_AuthService.isLoggedIn()"  class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle men text-white text-center"id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown"  aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" routerLinkActive="bg-secondary" routerLink="sign-up" >SignUp</a>
+                        <a class="dropdown-item" routerLink="sign-in" >SignIn</a>
+                    </div>
+                </li>
+                <li *ngIf="_AuthService.isLoggedIn()" class="nav-item dropdown">
+                    <a class="nav-link" href="#"  
+                          (click)="logout()">
+                        <i class="fa-solid fa-right-from-bracket text-white closed fa-xl"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

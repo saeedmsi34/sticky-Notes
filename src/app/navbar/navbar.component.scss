@@ -1,0 +1,17 @@
+// .ex{
+//     background-color: #343a40 !important;
+// }
+.dropdown-item ,.notes{
+    cursor: pointer !important;
+}
+
+
+:host {
+  .btn-out {
+    cursor: pointer;
+  }
+}
+.closed:hover,.men:hover{
+    color: darkgrey !important;
+    
+}
